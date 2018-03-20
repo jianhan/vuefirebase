@@ -8,7 +8,7 @@ import Vuetify from 'vuetify'
 import 'vuetify/dist/vuetify.min.css'
 import VeeValidate from 'vee-validate'
 import firebase from 'firebase'
-import {firebaseConfigs} from '@/.env'
+import {firebaseConfigs, successURL, loginURL} from '@/.env'
 
 Vue.use(VeeValidate)
 Vue.use(Vuetify)
@@ -24,9 +24,9 @@ new Vue({
     firebase.initializeApp(firebaseConfigs)
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
-        this.$router.push('/success')
+        this.$router.push(successURL)
       } else {
-        this.$router.push('/auth/login')
+        this.$router.push(loginURL)
       }
     })
   }
