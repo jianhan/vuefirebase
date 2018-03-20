@@ -10,6 +10,6 @@
 
 <script>
 export default {
-  name: 'layouts-auth'
+  name: 'l-auth'
 }
 </script>

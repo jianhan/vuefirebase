@@ -1,6 +1,7 @@
 <template>
 <v-flex xs12 sm8 md4>
   <v-card class="elevation-12">
+    <firebase-auth/>
     <v-toolbar dark color="primary">
       <v-toolbar-title>Login</v-toolbar-title>
       <v-spacer></v-spacer>
@@ -20,7 +21,10 @@
 </template>
 
 <script>
+import FirebaseAuth from '@/components/FirebaseAuth'
+
 export default {
-  name: 'pages-login'
+  name: 'p-login',
+  components: {FirebaseAuth}
 }
 </script>

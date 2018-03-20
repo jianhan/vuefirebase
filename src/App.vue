@@ -5,18 +5,8 @@
 </template>
 
 <script>
-import Auth from '@/layouts/Auth'
 
 export default {
-  name: 'App',
-  components: [
-    Auth,
-  ],
-  data: () => ({
-    drawer: null
-  }),
-  props: {
-    source: String
-  }
+  name: 'App'
 }
 </script>
