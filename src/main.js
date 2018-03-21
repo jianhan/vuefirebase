@@ -7,8 +7,8 @@ import 'babel-polyfill'
 import Vuetify from 'vuetify'
 import 'vuetify/dist/vuetify.min.css'
 import VeeValidate from 'vee-validate'
-import firebase from 'firebase'
-import {firebaseConfigs, successURL, loginURL} from '@/.env'
+import firebase from '@/firebase'
+import {successURL, loginURL} from '@/.env'
 
 Vue.use(VeeValidate)
 Vue.use(Vuetify)
@@ -21,7 +21,6 @@ new Vue({
   components: { App },
   template: '<App/>',
   created () {
-    firebase.initializeApp(firebaseConfigs)
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
         this.$router.push(successURL)
