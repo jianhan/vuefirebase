@@ -17,7 +17,10 @@ export default {
   data() {
     return {
       name: '',
-      email: ''
+      email: '',
+      users: [
+
+      ]
     }
   },
   methods: {
@@ -32,6 +35,9 @@ export default {
         console.error('Error adding document: ', error)
       })
     }
+  },
+  mounted() {
+    
   }
 }
 </script>

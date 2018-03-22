@@ -8,6 +8,7 @@ import Vuetify from 'vuetify'
 import 'vuetify/dist/vuetify.min.css'
 import VeeValidate from 'vee-validate'
 import firebase from '@/firebase'
+import store from '@/store'
 import {successURL, loginURL} from '@/.env'
 
 Vue.use(VeeValidate)
@@ -20,6 +21,7 @@ new Vue({
   router,
   components: { App },
   template: '<App/>',
+  store,
   created () {
     firebase.auth().onAuthStateChanged((user) => {
       if (user) {
