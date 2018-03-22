@@ -4,6 +4,8 @@ import LayoutsAuth from '@/layouts/Auth'
 import PagesLogin from '@/pages/Login'
 import PagesDashboard from '@/pages/Dashboard'
 import LayoutsAdmin from '@/layouts/Admin'
+import PagesAdminAddCourse from '@/pages/admin/AddCourse'
+import PagesAdminListCourses from '@/pages/admin/ListCourses'
 
 Vue.use(Router)
 
@@ -28,7 +30,20 @@ export default new Router({
       children: [
         {
           path: 'dashboard',
+          name: 'PagesDashboard',
           component: PagesDashboard
+        },
+        {
+          path: 'courses',
+          name: 'PagesAdminListCourses',
+          component: PagesAdminListCourses,
+          children: [
+            {
+              path: 'add',
+              name: 'PagesAdminAddCourse',
+              component: PagesAdminAddCourse
+            }
+          ]
         }
       ]
     }
