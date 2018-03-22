@@ -4,13 +4,12 @@ import createLogger from '@/plugins/logger'
 import courses from './modules/courses'
 
 Vue.use(Vuex)
-
 const debug = process.env.NODE_ENV !== 'production'
 
 export default new Vuex.Store({
   modules: {
     courses
   },
-  strict: debug,
+  strict: false,
   plugins: debug ? [createLogger()] : []
 })

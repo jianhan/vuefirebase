@@ -1,7 +1,7 @@
 <template>
-  <v-app id="inspire">
-    <router-view/>
-  </v-app>
+<v-app id="inspire">
+  <router-view/>
+</v-app>
 </template>
 
 <script>
@@ -11,11 +11,8 @@ import * as types from '@/store/mutation-types'
 export default {
   name: 'App',
   mounted() {
-    db.collection("users").get().then(querySnapshot => {
-      console.log(123)
-      querySnapshot.forEach(doc => {
-      console.log("Current data: ", doc)
-      })
+    db.collection("courses").onSnapshot(doc => {
+      this.$store.commit(types.REFRESH_COURSES, doc.docs)
     })
   }
 }
